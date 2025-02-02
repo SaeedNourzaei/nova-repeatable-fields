@@ -32,6 +32,7 @@
 	import draggable from 'vuedraggable'
 	import {FormField, HandlesValidationErrors} from 'laravel-nova'
 	import SubFieldRow from './rows/SubFieldRow.vue';
+	import Boolean from './sub-fields/BooleanSubField.vue'
 
 	export default {
 
@@ -39,12 +40,16 @@
 
 		components: {
 			draggable,
-			SubFieldRow
+			SubFieldRow,
+			'form-boolean': Boolean,
 		},
 
 		data: () => ({
 			value: '',
-			rows: []
+			rows: [],
+			fieldTypes: {
+				Boolean: 'form-boolean',
+			},
 		}),
 
 		props: ['resourceName', 'resourceId', 'field'],
